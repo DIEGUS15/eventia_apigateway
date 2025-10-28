@@ -11,4 +11,8 @@ export const SERVICES = {
     url: process.env.AUTH_SERVICE_URL || "http://localhost:3001",
     prefix: "/api/users",
   },
+  LOYALTY: {
+    url: process.env.LOYALTY_SERVICE_URL || "http://localhost:3002",
+    prefix: "/api/loyalty",
+  },
 };

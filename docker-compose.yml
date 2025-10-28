@@ -1,0 +1,19 @@
+services:
+  api-gateway:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    container_name: eventia_apigateway_dev
+    ports:
+      - "3000:3000"
+    environment:
+      PORT: 3000
+      AUTH_SERVICE_URL: http://host.docker.internal:3001
+      CORS_ORIGIN: "*"
+      NODE_ENV: development
+    networks:
+      - apigateway-network
+
+networks:
+  apigateway-network:
+    driver: bridge

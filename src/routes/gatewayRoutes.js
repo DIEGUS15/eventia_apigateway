@@ -28,4 +28,10 @@ router.use(
   proxyRequest(SERVICES.USERS.url)
 );
 
+router.use(
+  SERVICES.LOYALTY.prefix,
+  generalRateLimiter,
+  proxyRequest(SERVICES.LOYALTY.url)
+);
+
 export default router;
